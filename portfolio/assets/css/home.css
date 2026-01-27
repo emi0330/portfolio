@@ -1,0 +1,250 @@
+/*-----------------
+3秒画像スライド
+-----------------*/
+.slider {
+  width: 100%;
+  max-width: 800px;
+  height: 400px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.slides {
+  /*position: relative; /* ←これがないと重ならない */
+  width: 100%;
+  height: 100%;
+}
+
+.slides img {
+  /*position: absolute; /* ←必須 */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  /*opacity: 0;
+  transition: opacity 1s ease;*/
+}
+
+/*.slides img.active {
+  opacity: 1;
+}*/
+
+/*3秒画像スライド　2回目*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #fff;
+}
+
+/* 表示エリア */
+.slider {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+/* 横並び */
+.slides {
+  display: flex;
+  gap: 40px; /* ← 画像間の余白 */
+  transition: transform 1.2s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+/* 画像サイズ調整 */
+.slides img {
+  width: 70vw;      /* ← 画面より小さく */
+  height: 80vh;     /* ← 縦も抑える */
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+/*-----------------
+横並びナビゲーション
+-----------------*/
+.global-nav {
+  display: flex;
+  justify-content: center;
+}
+
+.global-nav ul {
+  display: flex;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+}
+
+.global-nav li {
+  list-style: none;
+}
+
+.global-nav a {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  width: 140px;
+  height: 70px;
+
+  text-decoration: none;
+  color: #000;
+
+  border-left: 1px solid #000;
+  border-right: 1px solid #000;
+  border-top: none;
+  border-bottom: none;
+
+  box-sizing: border-box;
+  transition: background-color .25s ease, color .25s ease;
+}
+
+
+.global-nav a:hover {
+  background: #000;
+  color: #fff;
+}
+
+.global-nav .en {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.global-nav .jp {
+  font-size: 11px;
+  color: inherit;
+}
+
+.global-nav li:first-child a {
+  border-left: none;
+}
+
+.global-nav li:last-child a {
+  border-right: none;
+}
+
+
+
+
+
+/*-----------------
+VIEW MORE ボタン
+-----------------*/
+.btn-view-all {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.btn-view-all a {  /*.btn-view-all クラスの中にある <a> タグ にだけ、このスタイルを当てる*/
+  display: inline-block; 
+  padding: 12px 25px; /*内側の余白  上下：12px 左右：25px*/
+  background: #333; /*#333 = かなり濃いグレー（ほぼ黒）*/
+  color: white; /*文字色を白*/
+  text-decoration: none; /*<a> タグの下線を消す デフォルトだとリンクは下線がつく、ボタン風にしたいから消す*/
+  font-weight: bold; /*文字を太字にする*/
+}
+
+
+/*-----------------
+カテゴリ表示
+-----------------*/
+.category {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 100px; /* 各固まりの間隔 */
+}
+
+
+
+/*-----------------
+自己紹介
+-----------------*/
+.about-content {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.about-text {
+    flex: 1;
+}
+
+.about-picture {
+    width: 300px;
+    height: auto;
+}
+
+/*-----------------
+スキル
+-----------------*/
+.skill-item {
+    display: flex;
+    align-items: center; /* 縦方向中央揃え */
+    gap: 16px;           /* 画像と文章の間隔 */
+    margin-bottom: 16px;
+}
+
+.skill-picture {
+    width: 100px; /* 好きなサイズに調整 */
+    height: auto;
+}
+
+.skill-text {
+    font-size: 18px;
+}
+
+/*-----------------
+制作物
+-----------------*/
+.works-picture {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 横4つ */
+    gap: 32px; /* 画像の間隔 */
+}
+
+.works-picture a {
+    display: block;      /* グリッド内でちゃんと領域を持たせる */
+    text-decoration: none;
+}
+
+.works-picture img {
+    width: 80%;   /* ← 画像を少し小さく */
+    height: 0 auto;  /* ← 中央寄せ */
+    display: block;
+    cursor: pointer;     /* クリックできる感を出す */
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.works-picture a:hover img {
+    transform: scale(1.05);
+    opacity: 0.9;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.work-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #333;
+}
+
+.work-item img {
+    width: 90%;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.work-title {
+    font-size: 14px;
+    text-align: center;
+    line-height: 1.4;
+}

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./assets/css/home.css">
+
+</head>
+<body>
+    <h1>タイトル</h1>
+
+    <!-------------------------
+    横並びナビゲーション
+    ------------------------->
+    <nav class="global-nav">
+    <ul>
+        <li>
+        <a href="#">
+            <span class="en">About</span>
+            <span class="jp">自己紹介</span>
+        </a>
+        </li>
+
+        <li>
+        <a href="#">
+            <span class="en">Skill</span>
+            <span class="jp">スキル</span>
+        </a>
+        </li>
+
+        <li>
+        <a href="#">
+            <span class="en">Works</span>
+            <span class="jp">制作物</span>
+        </a>
+        </li>
+        
+        <li>
+        <a href="#">
+            <span class="en">Contact</span>
+            <span class="jp">連絡先</span>
+        </a>
+        </li>
+    
+    </ul>
+    </nav>
+  
+
+    <!-------------------------
+    3秒画像スライド
+    ------------------------->
+    <div class="slider">
+        <div class="slides">
+            <!--<img src="./assets/images/img1.jpg" alt="画像1" class="active">-->
+            <img src="./assets/images/burger.jpg" alt="画像1" class="active">
+            <img src="./assets/images/oden.jpg" alt="画像2">
+            <img src="./assets/images/orange.jpg" alt="画像3">
+            <img src="./assets/images/soramame.jpg" alt="画像1">
+        </div>
+    </div>
+
+
+
+
+
+    <!-------------------------
+    自己紹介
+    ------------------------->
+    <div class="category">
+        <h2>About</h2>
+        <h3>自己紹介</h3>
+        
+        <div class="about-content">
+            <div class="about-text">
+                <p>簡単な自己紹介を書く</p>
+            </div>
+
+            <img class="about-picture" src="./assets/images/burger.jpg" alt="自己紹介写真">
+        </div>
+
+        <!-------------------------
+        VIEW MORE ボタン
+        ------------------------->
+        <div class="btn-view-all">
+            <a href="about.html">VIEW MORE</a>
+        </div>
+    </div>
+
+
+      
+    <!-------------------------
+    スキル
+    ------------------------->
+    <div class="category">
+        <h2>Skill</h2>
+        <h3>スキル</h3>
+
+        <div class="skill-content">
+            <div class="skill-item">
+                <img class="skill-picture" src="./assets/images/oden.jpg" alt="スキル画像">
+                <div class="skill-text">
+                    <p>HTML</p>
+                </div>
+            </div>
+
+            <div class="skill-item">
+                <img class="skill-picture" src="./assets/images/orange.jpg" alt="スキル画像">
+                <div class="skill-text">
+                    <p>CSS</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!-------------------------
+    制作物
+    ------------------------->
+    <div class="category">
+        <h2>Works</h2>
+        <h3>制作物</h3>
+
+        <div class="works-picture">
+            <a href="https://www.google.com/" target="_blank" rel="noopener noreferrer" class="work-item">
+                <img src="./assets/images/burger.jpg" alt="画像1">
+                <span class="work-title">ジューシーバーガー</span>
+            </a>
+
+            <a href="https://www.google.com/" target="_blank" rel="noopener noreferrer" class="work-item">
+                <img src="./assets/images/oden.jpg" alt="画像2">
+                <span class="work-title">冬のおでん定食</span>
+            </a>
+
+            <a href="https://www.google.com/" target="_blank" rel="noopener noreferrer" class="work-item">
+                <img src="./assets/images/orange.jpg" alt="画像3">
+                <span class="work-title">甘いオレンジ</span>
+            </a>
+
+            <a href="https://www.google.com/" target="_blank" rel="noopener noreferrer" class="work-item">
+                <img src="./assets/images/soramame.jpg" alt="画像4">
+                <span class="work-title">旬のそら豆</span>
+            </a>
+
+            <a href="https://www.google.com/" target="_blank" rel="noopener noreferrer" class="work-item">
+                <img src="./assets/images/burger.jpg" alt="画像5">
+                <span class="work-title">ジューシーバーガー</span>
+            </a>
+
+            <a href="https://www.google.com/" target="_blank" rel="noopener noreferrer" class="work-item">
+                <img src="./assets/images/oden.jpg" alt="画像6">
+                <span class="work-title">冬のおでん定食</span>
+            </a>
+
+            <a href="https://www.google.com/" target="_blank" rel="noopener noreferrer" class="work-item">
+                <img src="./assets/images/orange.jpg" alt="画像7">
+                <span class="work-title">甘いオレンジ</span>
+            </a>
+
+            <a href="https://www.google.com/" target="_blank" rel="noopener noreferrer" class="work-item">
+                <img src="./assets/images/soramame.jpg" alt="画像8">
+                <span class="work-title">旬のそら豆</span>
+            </a>
+        </div>
+    </div>
+    <!--
+    target="_blank" と rel の意味（大事）
+
+    target="_blank"
+    → 別タブで開く（外部サイトではほぼ必須）
+
+    rel="noopener noreferrer"
+    → セキュリティ対策（_blank とセットで書く）
+    -->
+
+
+    <script src="./assets/js/home.js"></script>
+</body>
+</html>
