@@ -1,0 +1,93 @@
+/*-----------------
+経歴年表
+-----------------*/
+.timeline-wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+.timeline {
+  position: relative;
+  padding-left: 24px;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 6px;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: #000;
+}
+
+.year-block {
+  margin: 32px 0 40px;
+}
+
+.year {
+  margin: 0 0 12px;
+  padding-left: 12px;
+  font-size: 24px;
+  border-left: 4px solid #2563eb;
+}
+
+.events {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.event {
+  position: relative;
+  display: grid;
+  grid-template-columns: 90px 1fr;
+  gap: 16px;
+  padding: 16px;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  background: #fff;
+}
+
+.event::before {
+  content: "";
+  position: absolute;
+  left: -24px;
+  top: 22px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #fff;
+  border: 3px solid #2563eb;
+}
+
+.event time {
+  color: #6b7280;
+  white-space: nowrap;
+}
+
+.event-title {
+  margin: 0 0 4px;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.event-body p {
+  margin: 0;
+  color: #374151;
+}
+
+/* スマホ */
+@media (max-width: 640px) {
+  .event {
+    grid-template-columns: 1fr;
+  }
+
+  .event time {
+    order: -1;
+  }
+}

@@ -8,36 +8,51 @@
 
 </head>
 <body>
-    <h1>タイトル</h1>
+    <h1 class="slide-up title-delay">Portfolio ～yuno.emiya～</h1>
 
     <!-------------------------
     横並びナビゲーション
     ------------------------->
-    <nav class="global-nav">
+    <nav class="global-nav slide-up title-delay">
     <ul>
         <li>
-        <a href="#">
+        <a href="#about">
             <span class="en">About</span>
             <span class="jp">自己紹介</span>
         </a>
         </li>
 
         <li>
-        <a href="#">
+        <a href="#career">
+            <span class="en">Career</span>
+            <span class="jp">経歴</span>
+        </a>
+        </li>
+
+        <li>
+        <a href="#strength">
+            <span class="en">Strength</span>
+            <span class="jp">強み</span>
+        </a>
+        </li>
+
+
+        <li>
+        <a href="#skill">
             <span class="en">Skill</span>
             <span class="jp">スキル</span>
         </a>
         </li>
 
         <li>
-        <a href="#">
+        <a href="#works">
             <span class="en">Works</span>
             <span class="jp">制作物</span>
         </a>
         </li>
         
         <li>
-        <a href="#">
+        <a href="#contact">
             <span class="en">Contact</span>
             <span class="jp">連絡先</span>
         </a>
@@ -45,72 +60,226 @@
     
     </ul>
     </nav>
-  
-
+   
     <!-------------------------
-    3秒画像スライド
+    画像スライドアップ
     ------------------------->
-    <div class="slider">
-        <div class="slides">
-            <!--<img src="./assets/images/img1.jpg" alt="画像1" class="active">-->
-            <img src="./assets/images/burger.jpg" alt="画像1" class="active">
-            <img src="./assets/images/oden.jpg" alt="画像2">
-            <img src="./assets/images/orange.jpg" alt="画像3">
-            <img src="./assets/images/soramame.jpg" alt="画像1">
-        </div>
+    <div class="slide">
+    <img class="slide-up delay1" src="./assets/images/kakou_tennnouji.jpg" alt="画像">
+    <img class="slide-up delay2" src="./assets/images/omotesando2.jpg" alt="画像">
+    <img class="slide-up delay3" src="./assets/images/tennnouji1.jpg" alt="画像">
     </div>
-
-
-
 
 
     <!-------------------------
     自己紹介
     ------------------------->
-    <div class="category">
-        <h2>About</h2>
+    <div class="category fade-up">
+        <h2 id="about">About</h2>
         <h3>自己紹介</h3>
         
         <div class="about-content">
             <div class="about-text">
-                <p>簡単な自己紹介を書く</p>
+                <p>江宮 優乃</p>
+                <p>1994年生まれの現在31歳、大阪府在住です。</p>
+                <p>手に職を付けたいと思いIT業界へ転職し、PCサポートデスクで約9年勤務しています。</p>
+                <p>業務効率化のためにマクロを始めたことをきっかけにプログラミングに興味を持ちました。</p>
+                <p>趣味は旅行・楽器演奏・手芸です。</p>
+                <p>1つのことに深く集中、凝ることが好きです。旅行にいって美味しいご飯を食べてリフレッシュをしています。</p>
             </div>
 
-            <img class="about-picture" src="./assets/images/burger.jpg" alt="自己紹介写真">
+            <img class="about-picture" src="./assets/images/tokusima1.jpg" alt="自己紹介写真">
         </div>
+                
+    </div>
 
-        <!-------------------------
-        VIEW MORE ボタン
-        ------------------------->
-        <div class="btn-view-all">
-            <a href="about.html">VIEW MORE</a>
+    <!-------------------------
+    経歴
+    ------------------------->
+    <div class="category fade-up">
+        <h2 id="career">Career</h2>
+        <h3>経歴</h3>
+
+        <div class="timeline-wrapper fade-up">
+            <section class="timeline" aria-label="年表">
+
+                <article class="year-block" id="y-2026">
+                    <h3 class="year">2017</h3>
+                    <ol class="events">
+                        <li class="event">
+                            <time datetime="2017-03">3月</time>
+                            <div class="event-body">
+                                <h4 class="event-title">大学卒業  4年間</h4>
+                                <p>～の研究を実施</p>
+                            </div>
+                        </li>
+
+                        <li class="event">
+                            <time datetime="2017-04">4月</time>
+                            <div class="event-body">
+                                <h4 class="event-title">外食業へ就職</h4>
+                                <p>～をしてきました</p>
+                            </div>
+                        </li>
+
+                        <li class="event">
+                            <time datetime="2017-12">12月</time>
+                            <div class="event-body">
+                                <h4 class="event-title">IT企業へ転職</h4>
+                                <p>～をしてきました</p>
+                            </div>
+                        </li>
+                    </ol>
+                </article>
+
+                <article class="year-block" id="y-2025">
+                    <h3 class="year">2022</h3>
+                    <ol class="events">
+                        <li class="event">
+                            <time datetime="2022-08">8月</time>
+                            <div class="event-body">
+                                <h4 class="event-title">別の異動</h4>
+                                <p>別の拠点へ異動</p>
+                            </div>
+                        </li>
+                    </ol>
+                </article>
+
+                <article class="year-block" id="y-2025">
+                    <h3 class="year">2025</h3>
+                    <ol class="events">
+                        <li class="event">
+                            <time datetime="2022-08">9月</time>
+                            <div class="event-body">
+                                <h4 class="event-title">ITスクールへ入学</h4>
+                                <p>ITスクールへ入学</p>
+                            </div>
+                        </li>
+
+                </article>
+            </section>
         </div>
     </div>
 
+    <!-------------------------
+    強み
+    ------------------------->
+    <div class="category fade-up">
+        <h2 id="strength">Strength</h2>
+        <h3>強み</h3>
+        
+        <ul class="strength-content">
+            <li class="strength-item">
+                <div class="strength-text">
+                    <h4>相手目線で考え、分かりやすく伝える力</h4>
+                    <p>企業向けPCサポートデスクとして約8年間、
+                        電話やメールでの問い合わせ対応を担当してきました。<br>
+                        相手の状況を丁寧に汲み取り、専門用語を使わずに説明することを心掛け、<br>
+                        「分かりやすい」「安心して任せられる」と評価をいただくこともありました。<br>
+                        Web制作においても、見る人・使う人の立場に立った設計や表現を大切にしています。
+                    </p>
+                </div>
+            </li>
 
-      
+            <li class="strength-item">
+                <div class="strength-text">
+                    <h4>地道に学び続け、形にする継続力</h4>
+                    <p>未経験からWeb制作の学習を始め、<br>
+                        Udemyでの動画学習と実際のコーディングを繰り返しながら、
+                        ポートフォリオサイトを一から制作しました。<br>
+                        分からない点はそのままにせず、調べて試し、理解することを大切にしています。<br>
+                        新しいことでも粘り強く取り組み、確実に身につけていく姿勢が私の強みです。
+                    </p>
+                </div>
+            </li>
+
+            <li class="strength-item">
+                <div class="strength-text">
+                    <h4>細部まで気を配る丁寧な制作</h4>
+                    <p>レイアウトのズレや余白、文字の読みやすさなど、
+                        細かな部分まで意識して制作することを心掛けています。<br>
+                        CSSの調整やアニメーションも「なぜそう見えるか」を考えながら実装し、
+                        見た目だけでなく使いやすさも重視しています。
+                    </p>
+                </div>
+            </li>
+        </ul>
+    </div>
+
     <!-------------------------
     スキル
     ------------------------->
-    <div class="category">
-        <h2>Skill</h2>
+    <div class="category fade-up">
+        <h2 id="skill">Skill</h2>
         <h3>スキル</h3>
 
-        <div class="skill-content">
-            <div class="skill-item">
-                <img class="skill-picture" src="./assets/images/oden.jpg" alt="スキル画像">
+        <ul class="skill-content">
+            <li class="skill-item">
                 <div class="skill-text">
-                    <p>HTML</p>
+                    <h4>HTML</h4>
+                    <p class="skill-level">
+                    ★★★★☆
+                    </p>
+                    <p>Udemyの動画学習と実機操作で学習</p>
+                    <p>本ポートフォリオ作成でさらに理解を深めました</p>
                 </div>
-            </div>
+            </li>
 
-            <div class="skill-item">
-                <img class="skill-picture" src="./assets/images/orange.jpg" alt="スキル画像">
+            <li class="skill-item">
                 <div class="skill-text">
-                    <p>CSS</p>
+                    <h4>CSS</h4>
+                    <p class="skill-level">
+                    ★★★★☆
+                    </p>
+                    <p>Udemyの動画学習と実機操作で学習</p>
+                    <p>本ポートフォリオ作成でさらに理解を深めました</p>
                 </div>
-            </div>
-        </div>
+            </li>
+
+            <li class="skill-item">
+                <div class="skill-text">
+                    <h4>Java Script</h4>
+                    <p class="skill-level">
+                    ★★★★☆
+                    </p>
+                    <p>Udemyの動画学習と実機操作で学習</p>
+                    <p>動画を見ながら同じツールを作れるようにしました</p>
+                </div>
+            </li>
+
+            <li class="skill-item">
+                <div class="skill-text">
+                    <h4>React</h4>
+                    <p class="skill-level">
+                    ★★★★☆
+                    </p>
+                    <p>Udemyの動画学習と実機操作で学習</p>
+                    <p>動画を見ながら同じツールを作れるようにしました</p>
+                </div>
+            </li>
+
+            <li class="skill-item">
+                <div class="skill-text">
+                    <h4>Next.js</h4>
+                    <p class="skill-level">
+                    ★★★★☆
+                    </p>
+                    <p>Udemyの動画学習と実機操作で学習</p>
+                    <p>動画を見ながら同じツールを作れるようにしました</p>
+                </div>
+            </li>
+
+            <li class="skill-item">
+                <div class="skill-text">
+                    <h4>Git / GitHub</h4>
+                    <p class="skill-level">
+                    ★★★★☆
+                    </p>
+                    <p>Udemyの動画学習と実機操作で学習</p>
+                    <p>動画を見ながら同じツールを作れるようにしました</p>
+                </div>
+            </li>
+        </ul>
     </div>
 
 
@@ -119,8 +288,8 @@
     <!-------------------------
     制作物
     ------------------------->
-    <div class="category">
-        <h2>Works</h2>
+    <div class="category fade-up">
+        <h2 id="works">Works</h2>
         <h3>制作物</h3>
 
         <div class="works-picture">
@@ -176,6 +345,24 @@
     -->
 
 
+    <!-------------------------
+    連絡先(フッター)
+    ------------------------->
+    <div id="contact">
+        <footer class="footer">
+            <p class="contact-mail">
+                <a href="mailto:agms.ytan164@gmail.com">📩 agms.ytan164@gmail.com</a>
+            </p>
+
+            <p class="copyright">© 2026 Yuno Emiya</p>
+        </footer>
+    </div>
+
+    <!-------------------------
+    ページの一番上へ戻すボタン
+    ------------------------->
+    <a href="#" class="back-to-top">↑</a><!--# は「ページの一番上」を指すアンカー。-->
     <script src="./assets/js/home.js"></script>
+    <script src="./assets/js/about.js"></script>
 </body>
 </html>

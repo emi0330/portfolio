@@ -1,90 +1,100 @@
-/*-----------------
-3秒画像スライド
------------------*/
-.slider {
-  width: 100%;
-  max-width: 800px;
-  height: 400px;
-  margin: 0 auto;
-  overflow: hidden;
-}
+:root {
+  /* ===== Base ===== */
+  --color-bg-main: #FFF3E0;
+  --color-bg-sub: #F2E8D5;
+  --color-border: #DDD;
 
-.slides {
-  /*position: relative; /* ←これがないと重ならない */
-  width: 100%;
-  height: 100%;
-}
+  /* ===== Text ===== */
+  --color-text-main: #2B2B2B;
+  --color-text-invert: #FFF3E0;
 
-.slides img {
-  /*position: absolute; /* ←必須 */
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  /* ===== Primary ===== */
+  --color-primary: #F68B1E;
+  --color-primary-sub: #C46A1C;
 
-  /*opacity: 0;
-  transition: opacity 1s ease;*/
-}
+  /* ===== Accent ===== */
+  --color-accent: #8FAF9A;
 
-/*.slides img.active {
-  opacity: 1;
-}*/
-
-/*3秒画像スライド　2回目*/
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+  /* ===== Dark ===== */
+  --color-brown-dark: #5A4632;
+  --color-brown-shadow: #3A2A1B;
 }
 
 body {
-  background: #fff;
+  background: var(--color-bg-main);
+  color: var(--color-text-main);
+  /*background: #F9F8F3;*/
+  font-family: 'メイリオ', 'Meiryo','Hiragino Kaku Gothic ProN','ヒラギノ角ゴ ProN W3','ＭＳ Ｐゴシック','MS PGothic''MS UI Gothic','Helvetica','Arial',sans-serif;
 }
 
-/* 表示エリア */
-.slider {
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
+h1 {
+  color: var(--color-primary);
+  font-size: 40px; 
+  text-align: center;
+  margin-top: 50px; /*上の余白*/
+  margin-bottom: 40px; /*下の余白*/
+  animation-delay: 1.5s; /* h1は後から */
 }
 
-/* 横並び */
-.slides {
-  display: flex;
-  gap: 40px; /* ← 画像間の余白 */
-  transition: transform 1.2s cubic-bezier(0.77, 0, 0.175, 1);
+
+h2 {
+  display: block;
+  color: #F68B1E;
+  font-size: 32px;
+  margin-top: 50px; /*上の余白*/
+  margin-bottom: 5px; /*下の余白*/
+
+  padding-top: 20px;          /* 線と文字の間 */
+  border-top: 1px solid #ddd; /* 薄い横線 */
+
 }
 
-/* 画像サイズ調整 */
-.slides img {
-  width: 70vw;      /* ← 画面より小さく */
-  height: 80vh;     /* ← 縦も抑える */
-  object-fit: cover;
-  flex-shrink: 0;
+h3 {
+  color:#C46A1C;
+  font-size: 20px;
+  margin-top: 0;
+  margin-bottom: 40px; /*下の余白*/
+}
+
+h4 {
+  font-weight : bold
+}
+
+p{
+    font-family: 'メイリオ', 'Meiryo','Hiragino Kaku Gothic ProN','ヒラギノ角ゴ ProN W3','ＭＳ Ｐゴシック','MS PGothic',sans-serif;
 }
 
 /*-----------------
 横並びナビゲーション
 -----------------*/
+/* 横並びナビゲーション全体 */
 .global-nav {
-  display: flex;
-  justify-content: center;
+  display: flex;  /*中に入っている要素を横並びにする*/
+  justify-content: center;  /*中央にまとめる*/
+  margin: 20px 0;  /*次の要素との間隔調整　上下:20px　左右:0*/
+
+  position: sticky;
+  top: 0;                 /* 画面上部にくっつく */
+  z-index: 1000;          /* 他の要素より前に出す */
+
+  background: rgba(255, 243, 224, 0.95);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
 }
 
+/* ナビメニューの並び */
 .global-nav ul {
-  display: flex;
-  align-items: center;
+  display: flex;  /*メニューを横一列*/
+  align-items: center;  /*縦方向のズレを中央揃え*/
   padding: 0;
   margin: 0;
 }
 
 .global-nav li {
-  list-style: none;
+  list-style: none;  /*<li> の ・（黒丸）を消す*/
 }
 
+/* ナビのボタンデザイン */
 .global-nav a {
   display: flex;
   flex-direction: column;
@@ -95,7 +105,7 @@ body {
   height: 70px;
 
   text-decoration: none;
-  color: #000;
+  color: #2B2B2B;
 
   border-left: 1px solid #000;
   border-right: 1px solid #000;
@@ -106,22 +116,24 @@ body {
   transition: background-color .25s ease, color .25s ease;
 }
 
-
+/* ホバー時の演出 */
 .global-nav a:hover {
-  background: #000;
+  background: #6B3E1E;
   color: #fff;
 }
 
+/* 英語・日本語の文字サイズ */
 .global-nav .en {
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 600;
 }
 
 .global-nav .jp {
-  font-size: 11px;
+  font-size: 12px;
   color: inherit;
 }
 
+/* 両端の線を消す */
 .global-nav li:first-child a {
   border-left: none;
 }
@@ -130,25 +142,69 @@ body {
   border-right: none;
 }
 
-
+/* なめらか移動 */
+html {
+  scroll-behavior: smooth;
+}
 
 
 
 /*-----------------
-VIEW MORE ボタン
+画像スライドアップ
 -----------------*/
-.btn-view-all {
-  text-align: center;
-  margin: 20px 0;
+.slide-up {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: slideUp 1s ease-out forwards;
+  animation-delay: 0.3s; /* ← 0.3秒遅れて出る */
 }
 
-.btn-view-all a {  /*.btn-view-all クラスの中にある <a> タグ にだけ、このスタイルを当てる*/
-  display: inline-block; 
-  padding: 12px 25px; /*内側の余白  上下：12px 左右：25px*/
-  background: #333; /*#333 = かなり濃いグレー（ほぼ黒）*/
-  color: white; /*文字色を白*/
-  text-decoration: none; /*<a> タグの下線を消す デフォルトだとリンクは下線がつく、ボタン風にしたいから消す*/
-  font-weight: bold; /*文字を太字にする*/
+.delay1 { animation-delay: 0.2s; }
+.delay2 { animation-delay: 0.6s; }
+.delay3 { animation-delay: 1.0s; }
+
+.title-delay {
+  animation-delay: 2s; /* h1は後から */
+  text-align: center;
+  margin-top: 50px; /*上の余白*/
+  margin-bottom: 40px; /*下の余白*/
+}
+
+@keyframes slideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.slide {
+  display: flex;
+  justify-content: space-between; /* 横方向に均等 */
+  margin-bottom: 100px
+}
+
+.slide img {
+  width: calc(100% / 3); /* 横幅を3等分 */
+  object-fit: cover;
+}
+
+/*-----------------
+スクロール時のアニメーション
+-----------------*/
+.fade-up {
+  opacity: 0;
+  transition-delay: 0.2s;
+  transform: translateY(60px);
+  transition: opacity 1.5s ease, transform 1.5s ease;
+  /*opacity→透明度のアニメーション　1.5s→1.5秒かけて変化　ease→ゆっくり始まってゆっくり終わる*/
+  /*transform→位置や回転などを変化させる　1.5s→1.5秒かけて動く　ease→自然な動き*/
+
+}
+
+/* 表示された状態 */
+.fade-up.show {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 
@@ -161,6 +217,18 @@ VIEW MORE ボタン
   align-items: center;
   margin-bottom: 100px; /* 各固まりの間隔 */
 }
+
+.category h2{
+  width: 100%;
+  text-align: center;
+}
+
+.container {
+    max-width: 1100px;   /* 好きな幅（1000〜1200pxが多い） */
+    margin: 0 auto;      /* 左右中央寄せ */
+    padding: 0 24px;     /* スマホ用の左右余白 */
+}
+
 
 
 
@@ -182,24 +250,159 @@ VIEW MORE ボタン
     height: auto;
 }
 
+
+/*-----------------
+経歴
+-----------------*/
+.timeline-wrapper {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+.timeline {
+  position: relative;
+  padding-left: 24px;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 6px;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: #ddd;
+}
+
+.year-block {
+  margin: 32px 0 40px;
+}
+
+.year {
+  margin: 0 0 12px;
+  padding-left: 12px;
+  font-size: 24px;
+  border-left: 4px solid #F68B1E;
+}
+
+.events {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.event {
+  position: relative;
+  display: grid;
+  grid-template-columns: 90px 1fr;
+  gap: 16px;
+  padding: 16px;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+}
+
+.event::before {
+  content: "";
+  position: absolute;
+  left: -24px;
+  top: 22px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #fff;
+  border: 3px solid #F68B1E;
+}
+
+.event time {
+  color: #6b7280;
+  white-space: nowrap;
+}
+
+.event-title {
+  margin: 0 0 4px;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.event-body p {
+  margin: 0;
+  color: #374151;
+}
+
+/* スマホ */
+@media (max-width: 640px) {
+  .event {
+    grid-template-columns: 1fr;
+  }
+
+  .event time {
+    order: -1;
+  }
+}
+
+/*-----------------
+強み
+-----------------*/
+.strength-content {
+    list-style: none;
+}
+
+.strength-content {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.strength-text h4 {
+  margin-bottom: 12px;
+}
+
+.strength-text p {
+  line-height: 1.7;
+}
+
+
 /*-----------------
 スキル
 -----------------*/
+.skill-content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 80px;
+    row-gap: 40px;
+    padding: 0 150px;
+}
+
+
 .skill-item {
     display: flex;
     align-items: center; /* 縦方向中央揃え */
     gap: 16px;           /* 画像と文章の間隔 */
-    margin-bottom: 16px;
+    margin: 0;
 }
 
-.skill-picture {
-    width: 100px; /* 好きなサイズに調整 */
-    height: auto;
+.skill-box {
+  width: 100px;           /* 幅 */
+  height: 150px;          /* 高さ */
+  border: 3px inset #333; /* 枠線（太さ、種類、色） */
+  display: flex;          /* 中央寄せ用の設定1 */
+  justify-content: center;/* 水平中央寄せ */
+  align-items: center;    /* 垂直中央寄せ */
+  text-align: center;     /* 文字のセンタリング */
+  margin: 40px;
+  font-size: 18px;
 }
 
 .skill-text {
     font-size: 18px;
 }
+
+
 
 /*-----------------
 制作物
@@ -208,6 +411,7 @@ VIEW MORE ボタン
     display: grid;
     grid-template-columns: repeat(4, 1fr); /* 横4つ */
     gap: 32px; /* 画像の間隔 */
+    padding: 0 200px;
 }
 
 .works-picture a {
@@ -216,8 +420,8 @@ VIEW MORE ボタン
 }
 
 .works-picture img {
-    width: 80%;   /* ← 画像を少し小さく */
-    height: 0 auto;  /* ← 中央寄せ */
+    height: auto;
+    margin: 0 auto;   /* 画像を中央寄せ */
     display: block;
     cursor: pointer;     /* クリックできる感を出す */
     transition: transform 0.3s ease, opacity 0.3s ease;
@@ -233,18 +437,70 @@ VIEW MORE ボタン
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 10px;
     text-decoration: none;
     color: #333;
 }
 
 .work-item img {
-    width: 90%;
+    width: 65%;
     margin-bottom: 8px;
     display: block;
 }
 
 .work-title {
     font-size: 14px;
+    display: block;
     text-align: center;
     line-height: 1.4;
+}
+
+/*-----------------
+連絡先
+-----------------*/
+.contact-mail a {
+  font-size: 16px;
+  color: #5A4632; /* 落ち着いたブラウン系 */
+  text-decoration: none;
+}
+
+.contact-mail a:hover {
+  text-decoration: underline;
+}
+
+.footer {
+  background-color: #F2E8D5; /* やさしいベージュ */
+  padding: 40px 0;
+  text-align: right;
+}
+
+.copyright {
+  color: #5A4632;
+  font-size: 14px;
+  margin-top: 40px;
+}
+
+
+/*-----------------
+ページの一番上へ戻すボタン
+-----------------*/
+.back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+
+  width: 50px;
+  height: 50px;
+  background: #333;
+  color: #fff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+  text-decoration: none;
+  font-size: 20px;
+
+  cursor: pointer;
 }
